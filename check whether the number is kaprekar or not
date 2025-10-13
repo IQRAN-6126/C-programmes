@@ -1,0 +1,28 @@
+#include <stdio.h> 
+#include <math.h> 
+
+int main() 
+{ 
+    int number, square, digits = 0, divisor, left, right; 
+    printf("\nEnter a positive integer: "); 
+    scanf("%d", &number); 
+
+    square = number * number; 
+    int temp = square; 
+    while(temp > 0) 
+    { 
+        temp /= 10; 
+        digits++; 
+    } 
+
+    divisor = pow(10, digits / 2); 
+    left = square / divisor; 
+    right = square % divisor; 
+
+    if(left + right == number) 
+        printf("\n%d is a Kaprekar number", number); 
+    else 
+        printf("\n%d is not a Kaprekar number", number); 
+
+    return 0; 
+}
