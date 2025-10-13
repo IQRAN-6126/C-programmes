@@ -1,0 +1,25 @@
+#include <stdio.h> 
+
+int main() 
+{ 
+    int number, square, temp; 
+    printf("\nEnter a positive integer: "); 
+    scanf("%d", &number); 
+
+    square = number * number; 
+    temp = number; 
+
+    int pow = 1; 
+    while(temp > 0) 
+    { 
+        pow *= 10; 
+        temp /= 10; 
+    } 
+
+    if(square % pow == number) 
+        printf("\n%d is an Automorphic number", number); 
+    else 
+        printf("\n%d is not an Automorphic number", number); 
+
+    return 0; 
+}
